@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}文章列表{% endblock %}
+
+{% block content %}
+    <h1>所有文章</h1>
+    {% for post in posts %}
+        <div>
+            <h2>{{ post|upper}}</h2>
+        </div>
+    {% empty %}
+      <p>目前沒有文章</p>
+    {% endfor %}
+{% endblock %}
