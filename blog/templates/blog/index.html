@@ -6,7 +6,10 @@
     <h1>所有文章</h1>
     {% for post in posts %}
         <div>
-            <h2>{{ post|upper}}</h2>
+            <h2>{{ post.title|upper}}</h2>
+            <p>{{ post.content }}</p>
+            <small>{{ post.created_at|date:"Y-m-d" }}</small>
+            <a href="/blog/{{ post.id }}">閱讀更多</a>
         </div>
     {% empty %}
       <p>目前沒有文章</p>
